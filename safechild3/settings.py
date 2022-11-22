@@ -27,10 +27,17 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# AS THIS IS ONLY FFOR LOCALHOST WE CAN DISABLE THE CORS FEATURE
+
+CORS_ORIGIN_ALLOW_ALL = True
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'students',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,6 +47,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -75,8 +84,11 @@ WSGI_APPLICATION = 'safechild3.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'safechild3',
+        'USER': 'cris',
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
