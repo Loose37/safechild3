@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,12 +30,15 @@ ALLOWED_HOSTS = []
 
 # AS THIS IS ONLY FFOR LOCALHOST WE CAN DISABLE THE CORS FEATURE
 
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+)
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'frontend',
     'students',
     'rest_framework',
     'corsheaders',

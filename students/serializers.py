@@ -5,8 +5,7 @@ from .models import Route_1_events
 from .models import Route_2_events
 
 
-class StudentSerializer(serializers.ModelSerializer):
-
+class StudentSerializer(serializers.Serializer):
     class Meta:
         model = Students
         fields = '__all__'
@@ -19,14 +18,14 @@ class RolesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class Route_1_events(serializers.ModelSerializer):
+class Route_1_eventsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Route_1_events
         fields = '__all__'
 
 
-class Route_2_events(serializers.ModelSerializer):
+class Route_2_eventsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Route_2_events

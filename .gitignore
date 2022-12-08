@@ -131,8 +131,15 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
+# React 
+
+/frontend/node_modules
+
+
 # Environments
 .env
+.env.local_settings
+.vscode
 .venv
 env/
 venv/
